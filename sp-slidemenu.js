@@ -284,7 +284,7 @@ SpSlidemenu.prototype.setDefaultStyle = function() {
                     transitionTimingFunction: 'ease-in-out',
                     transitionDuration: ANIME_SPEED.slider + 'ms',
                     transitionDelay: '0ms',
-                    transform: _this.getTranslateX(0)
+                    transform: ''
                 });
             }
         }
@@ -510,6 +510,9 @@ SpSlidemenu.prototype.slideCloseEnd = function() {
 
     for (var i = _this.main.length; i--; ) {
         _this.main[i].SpSlidemenuStatus = SLIDE_STATUS.close;
+        setStyles(_this.main[i], {
+          transform: ''
+        });
     }
 
     // change style
