@@ -319,9 +319,17 @@ SpSlidemenu.prototype.setHeight = function(event) {
     _this = this;
     browserHeight = getBrowserHeight();
 
-    setStyles(_this._mainBody, {
-        minHeight: browserHeight + 'px'
-    });
+    var height = 0;
+    for (var i = _this.main.length; i--; ) {
+        height += _this.main[i].clientHeight;
+    }
+
+    if (height < browserHeight) {
+        setStyles(_this._mainBody, {
+            minHeight: browserHeight + 'px'
+        });
+    }
+
     setStyles(_this.slidemenu, {
         height: browserHeight + 'px'
     });
